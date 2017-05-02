@@ -5,11 +5,10 @@
         <link rel="stylesheet" href="stylesheet.css">
         <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
         <title>Flappy Cube</title>
+        <h1>Welcome to Flappy Cube!</h1>
     </head>
 
     <body onload="startGame()">
-        <h1>Welcome to Flappy Cube!</h1>
-
         <script>
             var myGamePiece;
             var myObstacles = [];
@@ -22,7 +21,7 @@
             {
                 myGamePiece = new component(30, 30, "green", 10, 120);          //the player
                 myGamePiece.gravity = 1;                                        //set the gravity
-                myScore = new component("30px", "Angrybirds", "red", 280, 40, "text");      //score size, text, color, and font
+                myScore = new component("30px", "Axure Handwriting", "red", 200, 40, "text");      //score size, text, color, and font
                 myGameArea.start();
                 check = false;
                 highScore = 0;
@@ -35,8 +34,8 @@
 
                 start : function() 
                 {
-                    this.canvas.width = 500;        //size of canvas
-                    this.canvas.height = 500;
+                    this.canvas.width = 400;        //size of canvas
+                    this.canvas.height = 400;
                     this.context = this.canvas.getContext("2d");            //2d canvas
                     document.body.insertBefore(this.canvas, document.body.childNodes[0]);
                     this.frameNo = 0;
@@ -146,8 +145,8 @@
                 if (myGameArea.frameNo == 1 || everyinterval(125)) 
                 { 
                     x = myGameArea.canvas.width;
-                    minHeight = 100;
-                    maxHeight = 400;
+                    minHeight = 50;
+                    maxHeight = 350;
                     height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
                     minGap = 75
                     maxGap = 75
