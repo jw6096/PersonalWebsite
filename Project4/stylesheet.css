@@ -2,7 +2,9 @@ canvas
 {
     border:1px solid #d3d3d3;
     background-color:black;
-    margin-left: 37%;
+    margin-left: 39.5%;
+    margin-top: 6%;
+    display: inline-block;
 }
 body
 {
@@ -13,14 +15,15 @@ p
 	color: orange;
     text-align: center;
     font-family: 'Bungee Inline', cursive;
-    font-size: 1.5em;
+    font-size: 1.25em;
 }
 h1
 {
     color: orange;
     text-align: center;
     font-family: 'Bungee Inline', cursive;
-    font-size: 3em;
+    font-size: 2em;
+    margin-top: -27%;
 }
 #fly
 {
@@ -35,7 +38,7 @@ h1
     box-shadow: 0 9px #999;
     border-radius: 10px;
     outline: none;
-    margin-top: 10px;
+    margin-top: 23%;
 }
 #restart
 {
