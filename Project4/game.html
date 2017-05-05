@@ -5,7 +5,6 @@
         <link rel="stylesheet" href="stylesheet.css">
         <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
         <title>Flappy Cube</title>
-        <h1>Welcome to Flappy Cube!</h1>
     </head>
 
     <body onload="startGame()">
@@ -14,18 +13,42 @@
             var myObstacles = [];
             var myScore;
             var check;
-            var highScore;
+            var highScore = localStorage.getItem("highScore");
             var numberScore;
+            var mySound;
+            var myMusic;
+            
 
             function startGame() 
             {
                 myGamePiece = new component(30, 30, "green", 10, 120);          //the player
                 myGamePiece.gravity = 1;                                        //set the gravity
-                myScore = new component("30px", "Axure Handwriting", "red", 200, 40, "text");      //score size, text, color, and font
+                myScore = new component("30px", "Angrybirds", "red", 280, 40, "text");      //score size, text, color, and font
+                //mySound = new sound("thunk.mp3");
+                //myMusic = new sound("PassiveCaged.mp3");
+                //myMusic.Play();
                 myGameArea.start();
                 check = false;
-                highScore = 0;
                 numberScore = 0;
+            }
+
+            function sound(src) 
+            {
+                this.sound = document.createElement("audio");
+                this.sound.src = src;
+                this.sound.setAttribute("preload", "auto");
+                this.sound.setAttribute("controls", "none");
+                this.sound.style.display = "none";
+                document.body.appendChild(this.sound);
+                this.play = function()
+                {
+                    this.sound.play();
+                }
+
+                this.stop = function()
+                {
+                    this.sound.pause();
+                }    
             }
 
             var myGameArea = 
@@ -34,8 +57,8 @@
 
                 start : function() 
                 {
-                    this.canvas.width = 400;        //size of canvas
-                    this.canvas.height = 400;
+                    this.canvas.width = 500;        //size of canvas
+                    this.canvas.height = 500;
                     this.context = this.canvas.getContext("2d");            //2d canvas
                     document.body.insertBefore(this.canvas, document.body.childNodes[0]);
                     this.frameNo = 0;
@@ -115,8 +138,16 @@
                     
                     if (crash == true && check == false)
                     {
-                        alert("Game Over! You scored " + highScore + ". Previous high schore is " + highScore + ".");
-                        check = true;
+                        if (highScore < numberScore)
+                        {
+                            alert("Game Over! You scored " + numberScore + ". The previous high score was " + highScore + ". Congratulations! You now have the high score!");
+                            check = true;
+                        }
+                        else
+                        {
+                            alert("Game Over! You scored " + numberScore + ". The high score is " + highScore + ".");
+                            check = true;
+                        }
                     }
 
                     return crash;
@@ -131,6 +162,7 @@
                 {
                     if (myGamePiece.crashWith(myObstacles[i])) 
                     {
+                        //mySound.Play();
                         return;
                     } 
                 }
@@ -139,14 +171,23 @@
 
                 numberScore = myGameArea.frameNo += 1; //adds score
 
-                if (highScore < numberScore)
-                    highScore = numberScore;
+                if (highScore !== null)
+                {
+                    if (numberScore > highScore)
+                    {
+                        localStorage.setItem("highScore", numberScore);
+                    }
+                }
+                else
+                {
+                    localStorage.setItem("highScore", numberScore);
+                }             
 
                 if (myGameArea.frameNo == 1 || everyinterval(125)) 
                 { 
                     x = myGameArea.canvas.width;
-                    minHeight = 50;
-                    maxHeight = 350;
+                    minHeight = 100;
+                    maxHeight = 400;
                     height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
                     minGap = 75
                     maxGap = 75
