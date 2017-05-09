@@ -1,9 +1,6 @@
             var myGamePiece;
             var myObstacles = [];
-            var myScore;
             var check;
-            var highScore = localStorage.getItem("highScore");
-            var numberScore;
             var mySound;
             var myMusic;
             var restartButton;
@@ -12,13 +9,11 @@
             {
                 myGamePiece = new component(30, 30, "orange", 10, 120);          //the player
                 myGamePiece.gravity = 1;                                        //set the gravity
-                myScore = new component("30px", "Bungee Inline", "dimgray", 280, 40, "text");      //score size, text, color, and font
                 mySound = new sound("thunk.mp3");
                 myMusic = new sound("Underfall.mp3");
                 myMusic.play();
                 myGameArea.start();
                 check = false;
-                numberScore = 0;
             }
 
             function sound(src) 
@@ -63,7 +58,6 @@
             function component(width, height, color, x, y, type) 
             {
                 this.type = type;
-                this.score = 0;
                 this.width = width;
                 this.height = height;
                 this.speedX = 0;
@@ -162,19 +156,7 @@
 
                 myGameArea.clear();
 
-                numberScore = myGameArea.frameNo += 1; //adds score
-
-                if (highScore !== null)
-                {
-                    if (numberScore > highScore)
-                    {
-                        localStorage.setItem("highScore", numberScore);
-                    }
-                }
-                else
-                {
-                    localStorage.setItem("highScore", numberScore);
-                }             
+                myGameArea.frameNo += 1;          
 
                 if (myGameArea.frameNo == 1 || everyinterval(250)) 
                 { 
@@ -216,4 +198,16 @@
             function Restart()
             {
                 location.reload();
+            }
+
+            function ResetStats()
+            {
+                myGamePiece = new component(30, 30, "orange", 10, 120);  
+                myGamePiece.gravity = 1; 
+            }
+
+            function Over()
+            {
+                ResetStats();
+                
             }
