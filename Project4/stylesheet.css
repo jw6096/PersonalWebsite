@@ -36,7 +36,23 @@ p
 }
 #restart
 {
-    margin-left: 44%;
+    margin-left: 37.5%;
+    cursor: pointer;
+    background-color: dimgray;
+    color: darkgray;
+    text-align: center;
+    text-decoration: none;
+    font-size: 3em;
+    border: darkgray;
+    box-shadow: 0 9px #999;
+    border-radius: 10px;
+    outline: none;
+    margin-top: 10px;
+    display: none;
+}
+#butt
+{
+    margin-left: 0%;
     cursor: pointer;
     background-color: dimgray;
     color: darkgray;
@@ -61,4 +77,8 @@ button:active
     background-color: darkgray;
     color: gray;
     transform: translateY(4px);
+}
+a
+{
+    text-decoration: none;
 }
