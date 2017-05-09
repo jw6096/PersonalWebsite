@@ -2,11 +2,18 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="instructions.css">
         <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
-        <title>Navigation Page</title>
+        <title>Instructions</title>
     </head>
     
-    <body>
+    <body onload="startGame()">
+        <script src="instructions.js"></script>
+        <button id="fly" onmousedown="accelerate(-0.125)" onmouseup="accelerate(0.1)">FLY!</button>
+        <button id="restart" onclick="Restart()">Restart</button>
+        <p>The goal of the game is to get your cube through the gaps.</p>
+        <p>Use the "FLY!" button to fly! You can hold down to fly higher or you can repeatedly click.</p>
+        <p>You can try it now! If you hit something just click the restart.</p>
+        <p>For learning purposes, the bars are much farther and the gaps are much larger than the actual game.</p>
     </body>
 </html>
