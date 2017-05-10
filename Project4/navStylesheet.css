@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 body
 {
-    background-image: url("http://silviahartmann.com/background-tile-art/images/black_woven_seamless_tile.jpg");
+    background-image: url("http://orig06.deviantart.net/96f0/f/2012/053/d/6/night_fantasy_re_edit_by_txvirus-d4qlgzg.jpg");
 }
 #container
 {
     margin: 0 auto;
     width: 960px;
-    background-color: yellow;
+    background-color: dimgray;
     padding: 15px 15px 15px 15px;
     border-radius: 30px;
 }
@@ -19,7 +19,7 @@ footer
     padding-bottom: 0.5px;
     padding-left: 38.5%;
     padding-right: 40%;
-    background-color: lightblue;
+    background-color: darkgray;
     border-radius: 10px;
 }
 h1
@@ -36,7 +36,7 @@ article
     padding-left: 70px;
     margin-left: 7px;
     font-size: 0.9em;
-    background-color: cyan;
+    background-color: darkgray;
     border-radius: 10px;
 }
 #portrait
@@ -57,12 +57,12 @@ aside
     padding-left: 10px;
     padding-right: -50px;
     padding-bottom: 10px;
-    background-color: #C8A2C8;
+    background-color: darkgray;
     border-radius: 10px;
 }
 header
 {
-    background-color: violet;
+    background-color: darkgray;
     border-radius: 10px;
 }
 p
@@ -76,4 +76,14 @@ h2
 li
 {
     font-family: "Roboto", sans-serif;
+}
+a
+{
+    color: black;
+
+}
+a:hover
+{
+    color: white;
+    font-weight: bold;
 }
