@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body
+{
+    background-image: url("http://orig06.deviantart.net/96f0/f/2012/053/d/6/night_fantasy_re_edit_by_txvirus-d4qlgzg.jpg");
+}
+#container
+{
+    margin: 0 auto;
+    width: 960px;
+    background-color: dimgray;
+    padding: 15px 15px 15px 15px;
+    border-radius: 30px;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 7.5%;
+}
+p
+{
+    line-height: 100%;
+}
+#butt
+{
+    margin-left: 44%;
+    cursor: pointer;
+    background-color: dimgray;
+    color: darkgray;
+    text-align: center;
+    text-decoration: none;
+    font-size: 3em;
+    border: darkgray;
+    box-shadow: 0 9px #999;
+    border-radius: 10px;
+    outline: none;
+    margin-top: 10px;
+}
+button:hover
+{
+    color: darkgray;
+    background-color: gray;
+    box-shadow: 0 5px #666;
+}
+button:active
+{
+    background-color: darkgray;
+    color: gray;
+    transform: translateY(4px);
+}
