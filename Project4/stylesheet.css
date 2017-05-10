@@ -53,6 +53,7 @@ p
 #butt
 {
     margin-left: 0%;
+    margin-bottom: 1%;
     cursor: pointer;
     background-color: dimgray;
     color: darkgray;
@@ -81,4 +82,19 @@ button:active
 a
 {
     text-decoration: none;
+}
+#back
+{
+    margin-left: 45.5%;
+    cursor: pointer;
+    background-color: dimgray;
+    color: darkgray;
+    text-align: center;
+    text-decoration: none;
+    font-size: 3em;
+    border: darkgray;
+    box-shadow: 0 9px #999;
+    border-radius: 10px;
+    outline: none;
+    margin-top: 10px;
 }
